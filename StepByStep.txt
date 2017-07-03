@@ -1,0 +1,5 @@
+#Step 1: setup server side
+##Package
+npm install --save express body-parser
+##app.js, index.js
+
