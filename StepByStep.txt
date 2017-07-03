@@ -41,3 +41,10 @@ npm install --save jwt-simple
 ##files
 ./server/config.js
 ./controllers/auth_controller.js
+
+#8: Passport
+##Package
+npm install --save passport passport-jwt
+##files
+./services/passport.js
+./routes/auth_router.js
