@@ -36,5 +36,9 @@ module.exports = {
                 return res.json({ token: tokenForUser(user) });
             });
         });
+    },
+
+    signin(req, res, next) {
+        return res.json({ token: tokenForUser(req.user) });
     }
 }
