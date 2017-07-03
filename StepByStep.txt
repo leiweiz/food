@@ -1,6 +1,6 @@
 #1: setup server side
 ##Package
-npm install --save express body-parser
+npm install --save express body-parser morgan
 ##files
 ./app.js
 ./index.js
@@ -23,3 +23,21 @@ npm install --save mocha supertest nodemon
 ##files
 ./test/test_helper.js
 ./test/app_test.js
+
+#5: Singup
+##files
+./controllers/auth_controller.js
+./routes/auth_router.js
+
+#6: Encrypt Password
+##Package
+npm install --save bcrypt-nodejs
+##files
+./models/user.js
+
+#7: JWT
+##Package
+npm install --save jwt-simple
+##files
+./server/config.js
+./controllers/auth_controller.js

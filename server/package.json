@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "NODE_ENV=test mocha"
+    "test": "NODE_ENV=test mocha",
+    "debug": "nodemon --inspect-brk index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "jwt-simple": "^0.5.1",
     "mocha": "^3.4.2",
     "mongoose": "^4.11.1",
     "morgan": "^1.8.2",
