@@ -56,3 +56,13 @@ npm install --save passport -local
 ./routes/auth_router.js
 ./services/passport.js
 ./models/user.js
+
+#10: Setup Webpack
+##Package
+npm install --save-dev webpack babel-loader babel-core babel-preset-env babel-preset-react
+##files
+
+
+#11: Setup React
+#Package
+npm install --save react, react-dom
