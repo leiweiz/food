@@ -5,9 +5,21 @@ npm install --save express body-parser
 ./app.js
 ./index.js
 
-#2: create models
+#2: setup mongoose 
 ##Package
 npm install --save mongoose
 ##files
 ./models/user.js
 ./app.js
+
+#3: setup route and controllers
+##files
+./controllers/auth_controller.js
+./route/auth_router.js
+
+#4: setup mocha
+##Package
+npm install --save mocha supertest nodemon
+##files
+./test/test_helper.js
+./test/app_test.js
