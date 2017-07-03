@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 const mongoose = require('mongoose');
 
 // routes
@@ -14,6 +15,7 @@ if (process.env.NODE_ENV !== 'test') {
 const app = express();
 
 // middleware
+app.user(morgan(tiny)):
 app.use(bodyParser.json());
 
 // routers
