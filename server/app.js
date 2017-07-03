@@ -1,5 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+// config mongoose Promise
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/food');
 
 const app = express();
 

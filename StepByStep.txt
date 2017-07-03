@@ -1,5 +1,13 @@
-#Step 1: setup server side
+#1: setup server side
 ##Package
 npm install --save express body-parser
-##app.js, index.js
+##files
+./app.js
+./index.js
 
+#2: create models
+##Package
+npm install --save mongoose
+##files
+./models/user.js
+./app.js
