@@ -14,11 +14,16 @@ if (process.env.NODE_ENV !== 'test') {
 
 const app = express();
 
-// middleware
-app.user(morgan(tiny)):
-app.use(bodyParser.json());
+// before-handle middleware
+app.use(morgan("tiny"));
+app.use(bodyParser.json({ type: '*/*' }));
 
 // routers
 authRouter(app);
+
+// after-handle middleware
+app.use(function(err, req, res, next) {
+    res.status(422).send(err.message);
+})
 
 module.exports = app;
