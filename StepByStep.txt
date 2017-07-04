@@ -75,3 +75,6 @@ npm install --save react, react-dom
 npm install --save-dev react-redux
 
 #(update password salting)
+
+#13: Step redux-form
+
