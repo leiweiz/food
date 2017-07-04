@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Checkbox, Form, Message } from 'semantic-ui-react'
 import * as actions from '../../actions/auth_actions';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
@@ -26,7 +26,7 @@ class SignUpForm extends Component {
     renderAlert() {
         let alert = <div></div>;
         if (this.props.errorMessage) {
-            errorlog = (
+            alert = (
                 <Message
                     error
                     content={this.props.errorMessage}
@@ -37,8 +37,9 @@ class SignUpForm extends Component {
     }
 
     handleForSubmit(values) {
-        console.log(values);
-        this.props.history.push('/account');
+        this.props.signupUser(values, () => {
+            this.props.history.push('/account');
+        });
     }
 
     render() {
@@ -49,6 +50,12 @@ class SignUpForm extends Component {
                 <Field
                     label="Email"
                     name="email"
+                    type="text"
+                    component={this.renderField}
+                />
+                <Field
+                    label="Username"
+                    name="username"
                     type="text"
                     component={this.renderField}
                 />
@@ -80,6 +87,10 @@ function validate(values) {
 
     if (!values.email) {
         errors.email = "Email can not be empty";
+    }
+
+    if (!values.username) {
+        errors.username = "Username can not be empty";
     }
 
     if (!values.password) {

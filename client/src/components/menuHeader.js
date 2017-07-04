@@ -51,7 +51,6 @@ class MenuHeader extends Component {
     }
 
     render() {
-        //TODO: update activeItem
         const {activeItem} = this.state;
         const menubar = (this.props.authenticated ?
             <AuthMenuBar
