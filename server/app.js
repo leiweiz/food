@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // routes
 const authRouter = require('./routes/auth_router');
@@ -15,6 +16,7 @@ if (process.env.NODE_ENV !== 'test') {
 const app = express();
 
 // before-handle middleware
+app.use(cors());
 app.use(morgan("tiny"));
 app.use(bodyParser.json({ type: '*/*' }));
 

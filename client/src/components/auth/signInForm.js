@@ -28,7 +28,7 @@ class SignInForm extends Component {
     renderAlert() {
         let alert = <div></div>;
         if (this.props.errorMessage) {
-            errorlog = (
+            alert = (
                 <Message
                     error
                     content={this.props.errorMessage}
@@ -39,8 +39,9 @@ class SignInForm extends Component {
     }
 
     handleForSubmit(values) {
-        console.log(values);
-        this.props.history.push('/account');
+        this.props.signinUser(values, () => {
+            this.props.history.push('/account');
+        })
     }
 
     render() {
