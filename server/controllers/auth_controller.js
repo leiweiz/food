@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const jwt = require('jwt-simple');
 const config = require('../config');
+const saltPassword = require('../utils/saltPassword');
 
 function tokenForUser(user) {
     const timestamp = new Date().getTime();
@@ -29,7 +30,15 @@ module.exports = {
                 res.status(422).send({ error: 'email exists'});
             }
 
-            const user = new User({ email, username, password });
+            const saltedPassword = saltPassword.makePasswordEntry(password);
+
+            const user = new User({
+                email: email,
+                username: username,
+                password: saltedPassword.hash,
+                salt: saltedPassword.salt
+            });
+
             user.save(function(err, newUser) {
                 if (err) { return next(err); }
 

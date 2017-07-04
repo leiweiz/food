@@ -4,6 +4,7 @@ const config = require('../config');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const LocalStrategy = require('passport-local');
+const saltPassword = require('../utils/saltPassword');
 
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromHeader('authorization'),
@@ -28,12 +29,11 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
         if (err) { return done(err); }
         if (!user) { return done(null, false); }
 
-        user.comparePassword(password, function(err, isMatch) {
-            if (err) { return done(err); }
-            if (!isMatch) { return done(null, false); }
-
+        if (saltPassword.doesPasswordMatch(user.password, user.salt, password)) {
             return done(null, user);
-        });
+        } else {
+            return done(null, false);
+        }
     });
 });
 
