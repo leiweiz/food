@@ -24,6 +24,8 @@ const config = {
         ]
     },
     devServer: {
+        historyApiFallback: true,
+        contentBase: './',
         setup (app) {
             app.use('/images', express.static(__dirname+'/../public/images'));
         }

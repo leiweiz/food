@@ -73,3 +73,5 @@ npm install --save react, react-dom
 #12: Setup redux and redux
 ##Package
 npm install --save-dev react-redux
+
+#(update password salting)
