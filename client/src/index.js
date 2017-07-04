@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 ReactDOM.render(
-    <div>
+    <div className="test">
         Work!
     </div>
 , document.getElementById('app'));

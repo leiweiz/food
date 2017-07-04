@@ -62,6 +62,9 @@ npm install --save passport -local
 npm install --save-dev webpack babel-loader babel-core babel-preset-env babel-preset-react
 ##files
 
+#11: Setup webpack-dev-server
+##Package
+npm install --save-dev webpack-dev-server
 
 #11: Setup React
 #Package
