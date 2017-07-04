@@ -6,7 +6,6 @@ class Account extends Component {
     render() {
         return (
             <div>
-                <MenuHeader />
                 Account
             </div>
         );

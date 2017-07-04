@@ -4,17 +4,20 @@ import { Menu } from 'semantic-ui-react';
 class MenuHeader extends Component {
     constructor(props) {
         super(props);
-
+        this.state = {
+            activeItem: ''
+        }
         this.handleItemClick = this.handleItemClick.bind(this);
     }
 
-    handleItemClick() {
-
+    handleItemClick(e, {name}) {
+        this.setState({ activeItem: name });
+        this.props.history.push(`/${name}`);
     }
 
     render() {
         //TODO: update activeItem
-        const activeItem = 'signup';
+        const {activeItem} = this.state;
 
         return (
             <Menu>
