@@ -82,3 +82,4 @@ npm install --save-dev react-redux
 ##Package
 npm install --save axios
 
+#15: auto logiin
