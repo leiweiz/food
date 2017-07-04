@@ -8,6 +8,8 @@ import SignUp from './auth/signup';
 import SignOut from './auth/signout';
 import Account from './account';
 
+import requireAuth from './auth/require_auth';
+
 class App extends Component {
     render() {
         return (
@@ -18,7 +20,7 @@ class App extends Component {
                         <Route path="/signin" component={SignIn} />
                         <Route path="/signout" component={SignOut} />
                         <Route path="/signup" component={SignUp} />
-                        <Route path="/account" component={Account} />
+                        <Route path="/account" component={requireAuth(Account)} />
                         <Route path="/" component={LandingPage} />
                     </Switch>
                 </div>
