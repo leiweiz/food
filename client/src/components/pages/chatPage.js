@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
-import MenuHeader from './menuHeader.js';
-
-class Account extends Component {
+class ChatPage extends Component {
     render() {
         return (
             <div>
-                Account
+                Chat Page
             </div>
         );
     }
 }
 
-export default Account;
+export default ChatPage;

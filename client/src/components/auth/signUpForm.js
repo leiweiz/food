@@ -4,8 +4,6 @@ import * as actions from '../../actions/auth_actions';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 
-import MenuHeader from '../menuHeader.js'
-
 class SignUpForm extends Component {
     renderField(field) {
         const label = field.label;

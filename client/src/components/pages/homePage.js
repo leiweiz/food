@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
-
-class LandingPage extends Component {
+class HomePage extends Component {
     render() {
         return (
             <div>
-                LandingPage!
+                Home Page
             </div>
         );
     }
 }
 
-
-export default LandingPage;
+export default HomePage;

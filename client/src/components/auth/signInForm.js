@@ -4,9 +4,6 @@ import { Field, reduxForm } from 'redux-form';
 import * as actions from '../../actions/auth_actions';
 import { connect } from 'react-redux';
 
-
-import MenuHeader from '../menuHeader.js'
-
 class SignInForm extends Component {
 
     renderField(field) {
