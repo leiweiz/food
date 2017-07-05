@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Checkbox, Form, Message } from 'semantic-ui-react'
+import { Button, Checkbox, Form, Message, Divider, Segment } from 'semantic-ui-react'
 import { Field, reduxForm } from 'redux-form';
 import * as actions from '../../actions/auth_actions';
 import { connect } from 'react-redux';
@@ -45,22 +45,27 @@ class SignInForm extends Component {
         const { handleSubmit } = this.props;
 
         return (
-            <Form error onSubmit={handleSubmit(this.handleForSubmit.bind(this))}>
-                <Field
-                    label="Email"
-                    name="email"
-                    type="text"
-                    component={this.renderField}
-                />
-                <Field
-                    label="Password"
-                    name="password"
-                    type="password"
-                    component={this.renderField}
-                />
-                {this.renderAlert()}
-                <Button type='submit'>Submit</Button>
-            </Form>
+            <Segment padded>
+                <Form error onSubmit={handleSubmit(this.handleForSubmit.bind(this))}>
+                    <Field
+                        label="Email"
+                        name="email"
+                        type="text"
+                        component={this.renderField}
+                    />
+                    <Field
+                        label="Password"
+                        name="password"
+                        type="password"
+                        component={this.renderField}
+                    />
+                    {this.renderAlert()}
+                    <Button primary fluid type='submit'>Login</Button>
+
+                </Form>
+                <Divider horizontal>Or</Divider>
+                <Button secondary fluid>Sign Up Now</Button>
+            </Segment>
         );
     }
 }

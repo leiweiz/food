@@ -18,7 +18,7 @@ class AuthMenuBar extends Component {
         const { activeItem } = this.state;
 
         return (
-            <Menu>
+            <Menu fluid>
                 <Menu.Item
                     name='home'
                     active={activeItem === 'home'}
@@ -38,13 +38,11 @@ class AuthMenuBar extends Component {
                             <Dropdown.Item name="account" onClick={this.handleItemClick}>
                                 Account
                             </Dropdown.Item>
+                            <Dropdown.Item name="signout" onClick={this.handleItemClick}>
+                                Sign Out
+                            </Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-                    <Menu.Item
-                        name='signout'
-                        onClick={this.handleItemClick}>
-                        Sign Out
-                    </Menu.Item>
                 </Menu.Menu>
             </Menu>
         );

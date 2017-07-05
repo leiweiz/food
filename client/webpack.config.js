@@ -6,7 +6,6 @@ const config = {
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js',
-        publicPath: '/build'
     },
     devtool: 'source-map',
     module: {
@@ -24,10 +23,15 @@ const config = {
         ]
     },
     devServer: {
+        inline: true,
+        hot: true,
         historyApiFallback: true,
         contentBase: './',
         setup (app) {
-            app.use('/images', express.static(__dirname+'/../public/images'));
+            app.use('/images', express.static(__dirname + '/../public/images'));
+            app.use('/avatar', express.static(__dirname + '/../public/avatar'));
+            app.use('/', express.static(__dirname + '/build'));
+            app.use('/style', express.static(__dirname + '/style'));
         }
     }
 }

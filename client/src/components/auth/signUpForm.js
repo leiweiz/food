@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Checkbox, Form, Message } from 'semantic-ui-react'
+import { Button, Checkbox, Form, Message, Segment } from 'semantic-ui-react'
 import * as actions from '../../actions/auth_actions';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
@@ -44,34 +44,36 @@ class SignUpForm extends Component {
         const { handleSubmit } = this.props;
 
         return (
-            <Form error onSubmit={handleSubmit(this.handleForSubmit.bind(this))}>
-                <Field
-                    label="Email"
-                    name="email"
-                    type="text"
-                    component={this.renderField}
-                />
-                <Field
-                    label="Username"
-                    name="username"
-                    type="text"
-                    component={this.renderField}
-                />
-                <Field
-                    label="Password"
-                    name="password"
-                    type="password"
-                    component={this.renderField}
-                />
-                <Field
-                    label="Confirm Password"
-                    name="passwordConfirm"
-                    type="password"
-                    component={this.renderField}
-                />
-                {this.renderAlert()}
-                <Button type='submit'>Submit</Button>
-            </Form>
+            <Segment padded>
+                <Form error onSubmit={handleSubmit(this.handleForSubmit.bind(this))}>
+                    <Field
+                        label="Email"
+                        name="email"
+                        type="text"
+                        component={this.renderField}
+                    />
+                    <Field
+                        label="Username"
+                        name="username"
+                        type="text"
+                        component={this.renderField}
+                    />
+                    <Field
+                        label="Password"
+                        name="password"
+                        type="password"
+                        component={this.renderField}
+                    />
+                    <Field
+                        label="Confirm Password"
+                        name="passwordConfirm"
+                        type="password"
+                        component={this.renderField}
+                    />
+                    {this.renderAlert()}
+                    <Button primary fluid type='submit'>Sign Up</Button>
+                </Form>
+            </Segment>
         );
     }
 }
