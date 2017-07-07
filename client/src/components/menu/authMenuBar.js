@@ -29,20 +29,19 @@ class AuthMenuBar extends Component {
                     active={activeItem === 'chat'}
                     onClick={this.handleItemClick}
                 />
+                <Menu.Item
+                    name='account'
+                    active={activeItem === 'account'}
+                    onClick={this.handleItemClick}
+                />
                 <Menu.Menu position='right'>
                     <Menu.Item>
                         <Input icon='search' placeholder='Search...' />
                     </Menu.Item>
-                    <Dropdown item icon='setting' simple>
-                        <Dropdown.Menu>
-                            <Dropdown.Item name="account" onClick={this.handleItemClick}>
-                                Account
-                            </Dropdown.Item>
-                            <Dropdown.Item name="signout" onClick={this.handleItemClick}>
-                                Sign Out
-                            </Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
+                    <Menu.Item
+                        name='signout'
+                        onClick={this.handleItemClick}
+                    />
                 </Menu.Menu>
             </Menu>
         );

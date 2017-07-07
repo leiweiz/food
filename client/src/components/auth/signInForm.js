@@ -37,7 +37,7 @@ class SignInForm extends Component {
 
     handleForSubmit(values) {
         this.props.signinUser(values, () => {
-            this.props.history.push('/account');
+            this.props.history.push('/home');
         })
     }
 
